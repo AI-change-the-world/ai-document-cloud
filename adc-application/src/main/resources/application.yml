@@ -1,0 +1,40 @@
+spring:
+  mvc:
+    async:
+      request-timeout: 600000
+  application:
+    name: automl
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: admin
+      password: admin
+      config:
+        import-check:
+          enabled: false
+        namespace: public
+        group: ADC
+        file-extension: yaml
+        ext-config:
+          - data-id: ADC_DB
+            group: ADC
+            refresh: true
+  config:
+    import:
+      - nacos:ADC_DB?group=ADC
+
+# http://localhost:8080/swagger-ui/index.html#/
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
+
+logging:
+  level:
+    com.ruoyi: debug
+    org.springframework: warn
