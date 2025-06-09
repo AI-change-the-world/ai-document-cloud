@@ -1,9 +1,9 @@
-package org.xiaoshuyui.db.service;
+package org.xiaoshuyui.db.user.service;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import org.xiaoshuyui.db.entity.User;
-import org.xiaoshuyui.db.mapper.UserMapper;
+import org.xiaoshuyui.db.user.entity.User;
+import org.xiaoshuyui.db.user.mapper.UserMapper;
 
 @Service
 public class UserService {

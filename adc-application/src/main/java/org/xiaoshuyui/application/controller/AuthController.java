@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import org.xiaoshuyui.auth.entity.AuthRequest;
 import org.xiaoshuyui.auth.util.JwtUtil;
 import org.xiaoshuyui.common.ApiResponse;
-import org.xiaoshuyui.db.entity.User;
-import org.xiaoshuyui.db.service.UserService;
+import org.xiaoshuyui.db.user.entity.User;
+import org.xiaoshuyui.db.user.service.UserService;
 
 @RestController
 @RequestMapping("/auth")
