@@ -1,0 +1,1 @@
+export default function OrgList() { return <div>组织管理页面</div>; }

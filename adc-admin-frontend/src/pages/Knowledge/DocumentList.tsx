@@ -1,0 +1,1 @@
+export default function DocumentList() { return <div>文档管理页面</div>; }
