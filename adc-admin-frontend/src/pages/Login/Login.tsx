@@ -15,24 +15,30 @@ export default function Login() {
     const username = values.username;
     const password = sm3(values.password);
     setIsLoading(true);
-    const data = await login({ username, password });
-    setIsLoading(false);
+    try {
+      const data = await login({ username, password });
 
-    if (!data) {
+      if (!data) {
+        toast.error('登录失败');
+        return;
+      }
+
+      if (data.code !== 200) {
+        // alert(data.message);
+        toast.error(data.message);
+        return;
+      }
+
+      console.log('Success:', data);
+      localStorage.setItem(import.meta.env.VITE_LOCAL_STORAGE_KEY_PREFIX + "_" + import.meta.env.VITE_USER_INFO_KEY, JSON.stringify(data.data));
+      toast.success('登录成功');
+      navigate('/dashboard');
+    } catch (e) {
       toast.error('登录失败');
-      return;
+    } finally {
+      setIsLoading(false);
     }
 
-    if (data.code !== 200) {
-      // alert(data.message);
-      toast.error(data.message);
-      return;
-    }
-
-    console.log('Success:', data);
-    localStorage.setItem(import.meta.env.VITE_LOCAL_STORAGE_KEY_PREFIX + "_" + import.meta.env.VITE_USER_INFO_KEY, JSON.stringify(data.data));
-    toast.success('登录成功');
-    navigate('/org');
   };
 
   return (

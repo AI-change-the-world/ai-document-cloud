@@ -15,7 +15,7 @@ export default function Error() {
             }}
         >
             <h4 style={{ fontSize: '1.5rem' }}>Ops, nothing here.</h4>
-            <Button style={{ color: 'fff' }} type="primary" onClick={() => navigate('/org')}>
+            <Button style={{ color: 'fff' }} type="primary" onClick={() => navigate('/dashboard')}>
                 返回
             </Button>
         </Layout>

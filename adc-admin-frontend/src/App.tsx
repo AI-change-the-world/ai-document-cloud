@@ -1,3 +1,12 @@
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
+import { ToastContainer } from "react-toastify";
+
 export default function App() {
-  return <div>Hello Admin</div>;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </>
+  );
 }

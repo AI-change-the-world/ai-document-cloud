@@ -6,12 +6,14 @@ import UserList from '../pages/User/UserList';
 import KnowledgeList from '../pages/Knowledge/KnowledgeList';
 import DocumentList from '../pages/Knowledge/DocumentList';
 import Error from '../pages/Error';
+import Dashboard from '../pages/Dashboard/Dashboard';
 
 export const router = createBrowserRouter([
   { path: '/', element: <Login /> },
   {
     element: <AppLayout />,
     children: [
+      { path: '/dashboard', element: <Dashboard /> },
       { path: '/org', element: <OrgList /> },
       { path: '/user', element: <UserList /> },
       { path: '/knowledge', element: <KnowledgeList /> },
