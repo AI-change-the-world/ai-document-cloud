@@ -11,7 +11,13 @@ public class GlobalExceptionHandler {
   // 捕获所有未处理的异常
   @ExceptionHandler(Exception.class)
   public ApiResponse handleException(Exception e) {
-    log.error("服务器内部错误", e);
+    log.error("服务器内部错误: " + e.getMessage());
     return ApiResponse.fail(500, "服务器内部错误");
+  }
+
+  @ExceptionHandler(UserDefinedException.class)
+  public ApiResponse handleUserDefinedException(UserDefinedException e) {
+    log.error("用户自定义异常: " + e.getMessage());
+    return ApiResponse.fail(500, e.getMessage());
   }
 }

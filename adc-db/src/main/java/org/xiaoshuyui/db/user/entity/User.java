@@ -32,4 +32,7 @@ public class User {
 
   @TableField("updated_at")
   LocalDateTime updatedAt;
+
+  @TableField("upassword")
+  String password;
 }

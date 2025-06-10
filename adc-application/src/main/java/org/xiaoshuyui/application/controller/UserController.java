@@ -5,16 +5,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.xiaoshuyui.common.ApiResponse;
-import org.xiaoshuyui.db.organization.service.OrganizationServiceImpl;
+import org.xiaoshuyui.db.user.service.UserService;
 
 @RestController
-@RequestMapping("/organization")
-public class OrganizationController {
+@RequestMapping("/user")
+public class UserController {
 
-  @Resource private OrganizationServiceImpl orgService;
+    @Resource private UserService userService;
 
-  @GetMapping("/tree")
-  public ApiResponse getOrgTree() {
-    return ApiResponse.success(orgService.getOrganizationTree()) ;
-  }
+    @GetMapping("/list/summary")
+    public ApiResponse getUserSummary() {
+        return ApiResponse.success(userService.getUserSummary());
+    }
 }
