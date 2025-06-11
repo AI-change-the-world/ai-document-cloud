@@ -16,6 +16,7 @@ export default function AppLayout() {
             defaultSelectedKeys={['org']}
             style={{ height: '100%' }}
             items={[
+              { key: 'dashboard', label: 'Dashboard', onClick: () => navigate('/dashboard') },
               { key: 'org', label: '组织管理', onClick: () => navigate('/org') },
               { key: 'user', label: '用户管理', onClick: () => navigate('/user') },
               { key: 'knowledge', label: '知识库管理', onClick: () => navigate('/knowledge') },

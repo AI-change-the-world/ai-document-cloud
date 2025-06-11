@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.xiaoshuyui.db.user.mapper.UserMapper">
+    <select id="getUsers" resultType="org.xiaoshuyui.db.user.entity.User">
+        SELECT u.user_id as id, u.user_name as username, d.name as org_name, u.org_id as org_id, u.created_at as created_at, u.updated_at as updated_at FROM user as u left join organization as d on u.org_id = d.id
+        <if test="keyword != null and keyword != ''">
+            WHERE u.user_name LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+        limit #{offset}, #{size}
+    </select>
+</mapper>

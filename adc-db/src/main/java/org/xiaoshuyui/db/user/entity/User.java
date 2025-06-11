@@ -20,8 +20,8 @@ public class User {
   @TableField("role_id")
   Integer roleId;
 
-  @TableField("dept_id")
-  Integer deptId;
+  @TableField("org_id")
+  Integer orgId;
 
   @JsonIgnore
   @TableField("is_deleted")
@@ -33,6 +33,10 @@ public class User {
   @TableField("updated_at")
   LocalDateTime updatedAt;
 
+  @JsonIgnore
   @TableField("upassword")
   String password;
+
+  @TableField(value = "org_name", exist = false)
+  String orgName;
 }

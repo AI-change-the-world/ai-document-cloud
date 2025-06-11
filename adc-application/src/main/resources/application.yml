@@ -34,9 +34,11 @@ springdoc:
   swagger-ui:
     path: /swagger-ui
 
-logging:
-  level:
-    com.ruoyi: debug
-    org.springframework: warn
 server:
   port: 14300
+
+
+mybatis-plus:
+  mapper-locations:
+    - classpath:mapper/**/*.xml 
+  type-aliases-package: org.xiaoshuyui.db
