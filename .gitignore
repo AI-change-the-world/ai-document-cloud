@@ -32,3 +32,5 @@ build/
 .vscode/
 logs/
 target/
+
+.DS_Store
